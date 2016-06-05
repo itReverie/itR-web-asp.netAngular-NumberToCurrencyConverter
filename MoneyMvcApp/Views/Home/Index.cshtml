@@ -1,0 +1,60 @@
+﻿@model List<MoneyController.MoneyChange>
+
+<div id="body" ng-controller="index">
+
+
+    <section class="featured">
+        <div class="content-wrapper">
+            <form ng-submit="submit()">
+                <hgroup class="title">
+                    <h1>Type the amount of money to give you change:</h1>
+                </hgroup>
+                <div class="container">
+                    <div class="row">
+                        <input id="number" class="col-xs-6" type="text" ng-model="number" required />
+                        <input class="col-xs-6" type="submit" id="submit" value="Submit" />
+                        <label class="col-xs-12">{{error}}</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12"><span class=" col-xs-12 text-align-center">{{number| currency:" £"}}</span></div>
+                                </div>
+                    <div class="row">
+                        <div class="col-xs-6 text-bold">Currency</div>
+                        <div class="col-xs-6 text-bold">Quantity</div>
+                    </div>
+                    <div class="row" ng-repeat="result in moneyChange">
+                                    <div class="col-xs-6">{{result.CurrencyValue | currency:" £"}}</div>
+                                    <div class="col-xs-6">{{result.Quantity}}</div>
+                                </div>
+                 </div>
+
+
+
+
+                <section class="content-wrapper main-content clear-fix">
+                    <h3>List of all searches</h3>
+                    <div class="container">
+                        <div class="row" >
+
+                                <div class="col-xs-3">Number</div>
+                                <div class="col-xs-3">Currency Value</div>
+                                <div class="col-xs-3">Quantity</div>
+
+                        </div>
+                        <div class="row" ng-repeat="object in moneyChangeSearches">
+                            <div class="row" ng-repeat="result in object">
+                                <div class="col-xs-3">{{result.Number}}</div>
+                                <div class="col-xs-3">{{result.CurrencyValue  | currency:" £"}}</div>
+                                <div class="col-xs-3">{{result.Quantity}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </form>
+        </div>
+    </section>
+
+</div>
+
