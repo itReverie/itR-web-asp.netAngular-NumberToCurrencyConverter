@@ -88,7 +88,7 @@ namespace MoneyController
             {
                 MoneyChange moneyChange = new MoneyChange();
                 moneyChange.Id = dbMoneyChange.Id;
-                moneyChange.MoneyChangeId = new Guid(dbMoneyChange.MoneyChangeId.ToString());
+                moneyChange.MoneyChangeId = dbMoneyChange.MoneyChangeId ?? new Guid();
                 moneyChange.CurrencyId = Convert.ToInt16(dbMoneyChange.CurrencyId);
                 moneyChange.CurrencyValue = Convert.ToDecimal(dbMoneyChange.CurrencyValue);
                 moneyChange.Quantity = Convert.ToInt16(dbMoneyChange.Quantity);

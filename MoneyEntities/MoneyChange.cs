@@ -9,8 +9,7 @@ namespace MoneyEntities
     [Table("MoneyChange")]
     public partial class MoneyChange
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         public Guid? MoneyChangeId { get; set; }
 

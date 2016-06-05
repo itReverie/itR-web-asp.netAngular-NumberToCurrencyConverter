@@ -32,7 +32,7 @@ namespace MoneyController
             List<Currency> listCurrencies = new List<Currency>();
 
             model = new MoneyModel();
-            foreach (MoneyEntities.Money dbCurrency in model.Currency.ToList())
+            foreach (MoneyEntities.Money dbCurrency in model.Money.ToList())
             {
                 Currency currency = new Currency();
                 currency.CurrencyId = dbCurrency.CurrencyId;

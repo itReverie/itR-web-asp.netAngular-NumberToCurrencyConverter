@@ -12,8 +12,7 @@ namespace MoneySearchMvcApp.Controllers
     {
         List<MoneyChange> moneyChangeList=null;
         MoneyChangeController moneyChangeController = null;
-        String text;
-
+       
         public ActionResult Index()
         {
           

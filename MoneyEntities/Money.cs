@@ -10,7 +10,6 @@ namespace MoneyEntities
     public partial class Money
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long CurrencyId { get; set; }
 
         public decimal? CurrencyValue { get; set; }

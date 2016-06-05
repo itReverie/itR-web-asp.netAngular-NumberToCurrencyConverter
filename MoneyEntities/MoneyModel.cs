@@ -10,9 +10,10 @@ namespace MoneyEntities
         public MoneyModel()
             : base("name=MoneyModel")
         {
+            Database.SetInitializer<MoneyModel>(null);
         }
 
-        public virtual DbSet<Money> Currency { get; set; }
+        public virtual DbSet<Money> Money { get; set; }
         public virtual DbSet<MoneyChange> MoneyChange { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
